@@ -82,7 +82,7 @@ colnames(PVmat) <- c("H1rate", "power", "PPV", "NPV")
 PVmat <- melt(PVmat, id=c("H1rate", "power"), variable.name="index")
 
 ### calculate the proportion of true hypotheses for which PPV=NPV at power of interest
-PVrate <- allmat[which.min(abs(allmat[allmat[,"power"]==poi, "PPV"]-allmat[allmat[,"power"]==0.75, "NPV"])), "H1rate"]
+PVrate <- allmat[which.min(abs(allmat[allmat[,"power"]==poi, "PPV"]-allmat[allmat[,"power"]==poi, "NPV"])), "H1rate"]
 #-----------------------------------------------------------------------------------#
 
 #-----------------------------------------------------------------------------------#
